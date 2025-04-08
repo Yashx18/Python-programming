@@ -125,9 +125,118 @@ print(num)# Slicing works as same as list in the tuples.
 # else:
 #     print('Not Palindrome')
 
-grades = ['C','D','A', 'A', 'B', 'B', 'A']
-print('Number of Students with Grade A is',grades.count('A'))
+# grades = ['C','D','A', 'A', 'B', 'B', 'A']
+# print('Number of Students with Grade A is',grades.count('A'))
 
-sortedGrades = grades.copy()
-sortedGrades.sort()
-print(sortedGrades)
+# sortedGrades = grades.copy()
+# sortedGrades.sort()
+# print(sortedGrades)
+
+# info = {
+#     'name': 'ken',
+#     'age': 20,
+#     "learning": ['Python', 'MERN'],
+#     'isMale': True,
+#     'full name': 'Ken Yeager'
+# }
+# info['name']='Ken'
+# print(info['name'])
+# print(info)
+
+# null_dict = {}
+
+# null_dict['userName']='kenx024'
+# null_dict['programmingLanguages']={
+#     'Web2': 'JS/TS',
+#     'Web3': 'solidity/rust',
+#     'general': 'Python'
+# }
+
+# print(null_dict)
+
+#Nested Dictionary
+ken = {
+    'programmingLanguages': {
+        'Web2': 'JS/TS',
+        'Web3': 'solidity/rust',
+        'general': 'Python'
+    },
+    'age': 20
+}
+
+# print(ken)
+# print(ken['programmingLanguages']['Web2'])
+
+# print(list(ken.keys()))
+# print(list(ken.values()))
+# print(list(ken.items()))
+
+# print(ken)
+# ken.update({'city': 'Delhi'})
+# print(ken)
+
+# Set does not store duplicate values and not even counted no moatter what language.
+collection  = {1,2,2,2,3,4,'hello'}
+# print(type(collection))
+# print(len(collection))
+
+# Empty Set
+# Note : Sets itself are mutable but the elements of sets are immutable.
+newSet = set()
+
+newSet.add(1)
+newSet.add(2)
+newSet.add(3)
+
+newSet.remove(3)
+
+newSet.add('hi')
+newSet.add((1,2))
+# Lists and Dictionary can not be added into set.
+# Unhashable = list and dictionaries etc.
+
+# print(len(newSet))
+#newSet.clear() # Clears the whole set.
+newSet.pop() # Removes a random value from the Set.
+# print(newSet)
+# print(len(newSet))
+
+
+set1 = {1,2,3}
+set2 = {2,3,4}
+
+# print(set1.union(set2))# Combines both set values and returns a new seat and common values are only considered only once.
+
+# print(set1.intersection(set2))# Combines common values and returns new set with only duplicate values.
+
+meanings = {
+    'table': ['a piece of furniture', 'list of facts & figures'],
+    'cat': 'a small animal'
+}
+# print(list(meanings.items()))
+
+subjects = {
+    'python',
+    'python',
+    'python',
+    'java',
+    'java',
+    'java',
+    'C++',
+    'C++',
+    'javascript',
+    'C'
+}
+# print(subjects)
+# print(len(subjects))
+
+# result = {}
+# for i in range(3):
+#     subject = str(input('Enter Subject :'))
+#     marks = float(input('Enter Marks :'))
+#     result[subject] = marks
+
+# print(result)
+
+num = {('int',9), ('float', 9.0)}
+# print(num)

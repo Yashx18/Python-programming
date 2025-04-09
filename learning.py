@@ -240,3 +240,90 @@ subjects = {
 
 num = {('int',9), ('float', 9.0)}
 # print(num)
+
+# list1 = ['a','b','c','d','e','f','g','h']
+# i = 100
+# while i >= 1:
+#     print(i)
+#     i -= 1
+
+# num = int(input('Enter Number :'))
+# i = 1
+# while i <= 10:
+#     print(num * i)
+#     i += 1;
+
+# arr = [1,4,9,16,25,36,49,64,81,100]
+# i = 0
+# while i < len(arr):
+#     print(arr[i])
+#     i += 1;
+
+arr = (1,4,9,16,25,36,49,64,81,100)
+# x = int(input('Enter number to find :'))
+# i = 0
+# while i < len(arr):
+#     if (arr[i] == x):
+#         print(x,'found at Index :',i)
+#         break
+     
+#     i += 1;
+        
+
+# for x in arr:
+#     print(x)
+
+# num = int(input('Enter number :'))
+# for x in arr:
+#     if (x == num):
+#         print(num,'found at index', arr.index(x))
+
+# for i in range(1,11,2): # range(start,stop,step)
+#     print(i)
+
+# for i in range(101):
+#     print(i)
+
+
+# for i in range(100, 0, -1):
+#     print(i)
+
+# num = int(input('Enter number :'))
+
+# for i in range(1,11):
+#     print(num * i)
+
+# for i in range(5):
+#     #empty
+#     pass # Pass is used to not get any work done like null statement.
+
+# print('some work done')
+
+
+# sum = 0;
+# num = int(input("Enter Number :"))
+
+# limit = num + 1
+# for i in range(1,limit):
+#     sum += i
+# print(sum)
+
+# i = 1
+# while (i <= num):
+#     sum += i;
+#     i += 1
+# print(sum)
+
+
+# i = 1
+# while (i <= num):
+#     sum += i;
+#     i += 1
+# print(sum)
+
+n = 1
+limit = int(input('Enter a Natural Number :'))
+newLimit = limit + 1
+for i in range(1,newLimit):
+    n *= i
+print('Factorial of',limit,'is',n,'.')

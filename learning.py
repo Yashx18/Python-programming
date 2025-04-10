@@ -1,4 +1,3 @@
-
 """firstName = int(input("Enter your name here : "))
 age = 20
 userName = "ken"
@@ -6,7 +5,7 @@ userName = "ken"
 print(firstName, age, userName)
 
 num1 = int(input('Enter First Number:'))
-num2 = int(input('Enter Second Number:')) 
+num2 = int(input('Enter Second Number:'))
 
 print('Sum is',num1 + num2)
 
@@ -154,14 +153,14 @@ print(num)# Slicing works as same as list in the tuples.
 
 # print(null_dict)
 
-#Nested Dictionary
+# Nested Dictionary
 ken = {
-    'programmingLanguages': {
-        'Web2': 'JS/TS',
-        'Web3': 'solidity/rust',
-        'general': 'Python'
+    "programmingLanguages": {
+        "Web2": "JS/TS",
+        "Web3": "solidity/rust",
+        "general": "Python",
     },
-    'age': 20
+    "age": 20,
 }
 
 # print(ken)
@@ -176,7 +175,7 @@ ken = {
 # print(ken)
 
 # Set does not store duplicate values and not even counted no moatter what language.
-collection  = {1,2,2,2,3,4,'hello'}
+collection = {1, 2, 2, 2, 3, 4, "hello"}
 # print(type(collection))
 # print(len(collection))
 
@@ -190,42 +189,42 @@ newSet.add(3)
 
 newSet.remove(3)
 
-newSet.add('hi')
-newSet.add((1,2))
+newSet.add("hi")
+newSet.add((1, 2))
 # Lists and Dictionary can not be added into set.
 # Unhashable = list and dictionaries etc.
 
 # print(len(newSet))
-#newSet.clear() # Clears the whole set.
-newSet.pop() # Removes a random value from the Set.
+# newSet.clear() # Clears the whole set.
+newSet.pop()  # Removes a random value from the Set.
 # print(newSet)
 # print(len(newSet))
 
 
-set1 = {1,2,3}
-set2 = {2,3,4}
+set1 = {1, 2, 3}
+set2 = {2, 3, 4}
 
 # print(set1.union(set2))# Combines both set values and returns a new seat and common values are only considered only once.
 
 # print(set1.intersection(set2))# Combines common values and returns new set with only duplicate values.
 
 meanings = {
-    'table': ['a piece of furniture', 'list of facts & figures'],
-    'cat': 'a small animal'
+    "table": ["a piece of furniture", "list of facts & figures"],
+    "cat": "a small animal",
 }
 # print(list(meanings.items()))
 
 subjects = {
-    'python',
-    'python',
-    'python',
-    'java',
-    'java',
-    'java',
-    'C++',
-    'C++',
-    'javascript',
-    'C'
+    "python",
+    "python",
+    "python",
+    "java",
+    "java",
+    "java",
+    "C++",
+    "C++",
+    "javascript",
+    "C",
 }
 # print(subjects)
 # print(len(subjects))
@@ -238,7 +237,7 @@ subjects = {
 
 # print(result)
 
-num = {('int',9), ('float', 9.0)}
+num = {("int", 9), ("float", 9.0)}
 # print(num)
 
 # list1 = ['a','b','c','d','e','f','g','h']
@@ -259,16 +258,16 @@ num = {('int',9), ('float', 9.0)}
 #     print(arr[i])
 #     i += 1;
 
-arr = (1,4,9,16,25,36,49,64,81,100)
+arr = (1, 4, 9, 16, 25, 36, 49, 64, 81, 100)
 # x = int(input('Enter number to find :'))
 # i = 0
 # while i < len(arr):
 #     if (arr[i] == x):
 #         print(x,'found at Index :',i)
 #         break
-     
+
 #     i += 1;
-        
+
 
 # for x in arr:
 #     print(x)
@@ -321,9 +320,104 @@ arr = (1,4,9,16,25,36,49,64,81,100)
 #     i += 1
 # print(sum)
 
-n = 1
-limit = int(input('Enter a Natural Number :'))
-newLimit = limit + 1
-for i in range(1,newLimit):
-    n *= i
-print('Factorial of',limit,'is',n,'.')
+# n = 1
+# limit = int(input('Enter a Natural Number :'))
+# newLimit = limit + 1
+# for i in range(1,newLimit):
+#     n *= i
+# print('Factorial of',limit,'is',n,'.')
+
+
+###################### Functions and Recursions #####################
+
+# def sum(a,b):
+#     return a + b
+
+# ans1 = sum(2,2)
+# print(ans1)
+
+# print(sum(2,2))
+
+# def avg(a,b,c):
+#     return (a+b+c)/3
+
+# ans = avg(2,3,5)
+# print(ans)
+
+# def length(list):
+#     return len(list)
+
+# ans = length([1,2,3,4,5,6,7,8,9,10])
+# print(ans)
+
+# def elments(list):
+#     for i in list:
+#         print(i)
+
+# ans = elments([1,2,3,4,5,6,7,8,9,10])
+# print(ans)
+
+
+def factorial(n):
+    res = 1
+    for i in range(1, n + 1):
+        res *= i
+    return res
+
+
+# print(factorial(4))
+
+# def converter(amt):
+#     return amt * 86.377
+
+# ans = converter(10)
+# print(ans)
+
+
+def identifier(num):
+    if num % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
+
+
+# num = int(input("Enter Number :"))
+# identifier(num)
+
+# RECURSION => When a function calls itself repeatedly.(Like a loop and loops and recursions can be used interchangeably)
+
+
+# def show(num):
+#     if (num == 0):# this step is called 'Base Case'.
+#         return
+#     print(num)
+#     show(num - 1)
+
+
+# show(5)
+
+
+# def fact(n):
+#     if n == 0 or n == 1:
+#         return 1
+
+#     return n * fact(n - 1)
+
+# print(fact(4))
+
+# def sum(n):
+#     if n == 0 :
+#         return 0
+
+#     return n + sum(n - 1)
+
+# print(sum(5))
+
+
+def printElements(list, idx=0):
+   if ( idx == len(list)):
+       return
+   print(list[idx])
+   printElements(list,idx + 1)
+
+printElements([1,2,3,4,5,6])

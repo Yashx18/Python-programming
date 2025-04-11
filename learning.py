@@ -507,11 +507,11 @@ with open("nums.txt", "r") as file:
         num = int(i)
         # print(i)
         res = num % 2
-        if (res == 0):
+        if res == 0:
             count += 1
             evenList.append(num)
-    print(evenList)
-    print(count)
+    print("Even numbers List :", evenList)
+    print("Count :", count)
 
     #     if(items % 2 == 0):
     #         count += 1

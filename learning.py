@@ -415,9 +415,105 @@ def identifier(num):
 
 
 def printElements(list, idx=0):
-   if ( idx == len(list)):
-       return
-   print(list[idx])
-   printElements(list,idx + 1)
+    if idx == len(list):
+        return
+    print(list[idx])
+    printElements(list, idx + 1)
 
-printElements([1,2,3,4,5,6])
+
+# printElements([1,2,3,4,5,6])
+
+#############File Input/Output in Python #############
+
+"""
+'r' : open for reading(default)
+'w' : open for writing, truncating the file first.(Data will be deleted and overwritten)
+'x' : creates a new file and open it for writing
+'a' : open for writing, appending to the end of the file if it exists
+'b' : binary mode
+'t' : text mode (default)
+'+' : open a disk file for updating (reading or writing)
+
+"""
+
+# f = open("demo.txt", "r+")# It overwites the file from the starting point at first line.
+# data = f.read()
+# data = f.read(5)
+# line1 = f.readline()
+# line2 = f.readline()
+# print(data)
+# print(type(data))
+# print(line1)
+# print(line2)
+# f.close()
+
+
+# updatedFile = f.write('\nthis file has appended data.')
+# print(updatedFile)
+# f.write('YO Buddies')
+# print(f.read())
+# f.close()
+
+# with open('new.txt','r') as f:
+#     print(f.read())
+
+# with open("new.txt", "w") as f:
+#     f.write("yo")
+
+# import os
+# os.remove('new.txt')
+
+
+def find(file, word):
+    with open(file, "r") as f:
+        data = f.read()
+    if word in data:
+        print("Found")
+    else:
+        print("Not Found")
+
+
+# find('practice.txt', 'learning')
+
+# newData = data.replace('Java','Python')
+# print(newData)
+
+
+def checkForLine(word):
+    data = True
+    line = 1
+    with open("practice.txt", "r") as f:
+        while data:
+            data = f.readline()
+            if word in data:
+                print(word, "found at line", line)
+                break
+            else:
+                line += 1
+
+    return -1
+
+
+# checkForLine('File')
+
+with open("nums.txt", "r") as file:
+    count = 0
+    evenList = []
+    nums = ""
+    for line in file:
+        items = line.strip().split(",")
+        nums = items
+    for i in nums:
+        num = int(i)
+        # print(i)
+        res = num % 2
+        if (res == 0):
+            count += 1
+            evenList.append(num)
+    print(evenList)
+    print(count)
+
+    #     if(items % 2 == 0):
+    #         count += 1
+
+    # print(count)

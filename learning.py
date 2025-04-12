@@ -510,10 +510,132 @@ with open("nums.txt", "r") as file:
         if res == 0:
             count += 1
             evenList.append(num)
-    print("Even numbers List :", evenList)
-    print("Count :", count)
+    # print("Even numbers List :", evenList)
+    # print("Count :", count)
 
     #     if(items % 2 == 0):
     #         count += 1
 
     # print(count)
+
+###################### OOPS ######################
+
+
+# class Student:
+#     name = "ken"
+
+
+# s1 = Student()
+# s2 = Student()
+# print(type(Student))
+# print(type(s1.name))
+# print(s1.name)
+# print(s2.name)
+
+
+# The Self parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.
+# class Car:
+#     # Default Constructors
+#     # def __init__(self):
+#     #     pass
+#     type = 'AutoMobile' # Because this is a common value for every 'car' in our case, this will be stored only once in the memory. This is a "Class Attribute".
+
+#     # obj attr > class attr (obj attr has higher precedence)
+#     #Parameterized Constructors
+#     def __init__(self, model, speed):
+#         self.model = model
+#         self.speed = speed
+#         # print('adding new car in database')
+
+
+# car1 = Car("mercedes", "200 mph")  # data stored in variables are called Attributes
+# # print(car1.model, car1.speed)
+
+# car2 = Car("BMW", "190 mph")# these attributes are instnance attributes because they will be different for every object.
+# print(car2.model, car2.speed)
+
+# print(car1.color)
+# print(car1.brand)
+# print(Car.type)
+
+
+class Family:
+    def __init__(self, name, age, relation):
+        self.name = name
+        self.age = age
+        self.relation = relation
+
+    def greet(self):
+        print('Welcome',self.name)
+    def isAdult(self):
+        statement = (self.name, "is adult at age of", self.age)
+        return statement
+
+member1 = Family('Yash', 20, 'Son')
+# member1.greet()
+# print(member1.isAdult())
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    @staticmethod #This is Called a 'DECORATOR'. #This doesn't require you to pass self in parameter because it has no use here.
+    def hello():
+        print('Hello')
+    
+
+    def avg(self):
+        totalMarks = 0
+        for i in self.marks:
+            totalMarks += i
+        average = totalMarks / len(self.marks)
+        print('Hi',self.name, 'your average score is',average)
+
+
+stud1 = Student('ken', [80,70,85])
+# stud1.name = 'Yash'
+# stud1.hello()
+# stud1.avg()
+
+# ABSTRACTION => Hiding the implementation details of a class and only showing the essential features to the User. (inshort not showing unnecessary details)
+
+class Car:
+    def __init__(self):
+        self.acc = False
+        self.brk = False
+        self.clutch = False
+
+    def start(self):
+        self.clutch = True
+        self.acc = True
+        print('Car has started...')
+
+# car1 = Car()
+# car1.start()
+
+# ENCAPSULATION => Wrapping data and functions into a single unit (Object). Exmaple is all the code we have written in the class.
+
+class Account:
+    def __init__(self, balance, account_no):
+        self.balance = balance
+        self.account_no = account_no
+
+    def debit(self, amt):
+        self.balance -= amt
+        print('Amount',amt,'was debited')
+        self.getBalance()
+    def credit(self, amt):
+        self.balance += amt
+        print('Amount',amt,'was credited')
+        self.getBalance()
+    def getBalance(self):
+        print('Your Balance is', self.balance)
+
+
+acc1 = Account(10000, 12345)
+print(acc1.balance)
+print(acc1.account_no)
+acc1.debit(2000)
+acc1.credit(4000)
+

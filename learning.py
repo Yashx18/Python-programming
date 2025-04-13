@@ -566,39 +566,42 @@ class Family:
         self.relation = relation
 
     def greet(self):
-        print('Welcome',self.name)
+        print("Welcome", self.name)
+
     def isAdult(self):
         statement = (self.name, "is adult at age of", self.age)
         return statement
 
-member1 = Family('Yash', 20, 'Son')
+
+member1 = Family("Yash", 20, "Son")
 # member1.greet()
 # print(member1.isAdult())
+
 
 class Student:
     def __init__(self, name, marks):
         self.name = name
         self.marks = marks
 
-    @staticmethod #This is Called a 'DECORATOR'. #This doesn't require you to pass self in parameter because it has no use here.
+    @staticmethod  # This is Called a 'DECORATOR'. #This doesn't require you to pass self in parameter because it has no use here.
     def hello():
-        print('Hello')
-    
+        print("Hello")
 
     def avg(self):
         totalMarks = 0
         for i in self.marks:
             totalMarks += i
         average = totalMarks / len(self.marks)
-        print('Hi',self.name, 'your average score is',average)
+        print("Hi", self.name, "your average score is", average)
 
 
-stud1 = Student('ken', [80,70,85])
+stud1 = Student("ken", [80, 70, 85])
 # stud1.name = 'Yash'
 # stud1.hello()
 # stud1.avg()
 
 # ABSTRACTION => Hiding the implementation details of a class and only showing the essential features to the User. (inshort not showing unnecessary details)
+
 
 class Car:
     def __init__(self):
@@ -609,12 +612,14 @@ class Car:
     def start(self):
         self.clutch = True
         self.acc = True
-        print('Car has started...')
+        print("Car has started...")
+
 
 # car1 = Car()
 # car1.start()
 
 # ENCAPSULATION => Wrapping data and functions into a single unit (Object). Exmaple is all the code we have written in the class.
+
 
 class Account:
     def __init__(self, balance, account_no):
@@ -623,19 +628,89 @@ class Account:
 
     def debit(self, amt):
         self.balance -= amt
-        print('Amount',amt,'was debited')
+        print("Amount", amt, "was debited")
         self.getBalance()
+
     def credit(self, amt):
         self.balance += amt
-        print('Amount',amt,'was credited')
+        print("Amount", amt, "was credited")
         self.getBalance()
+
     def getBalance(self):
-        print('Your Balance is', self.balance)
+        print("Your Balance is", self.balance)
 
 
 acc1 = Account(10000, 12345)
-print(acc1.balance)
-print(acc1.account_no)
-acc1.debit(2000)
-acc1.credit(4000)
+# print(acc1.balance)
+# print(acc1.account_no)
+# acc1.debit(2000)
+# acc1.credit(4000)
 
+################# OOPS Part-2 #################
+
+# 'del' keyword => Used to delete object properties or object itself.
+
+# class Practice:
+#     def __init__(self, name):
+#         self.name = name
+
+# s1 = Practice('Yash')
+# print(s1.name)
+# del s1
+# print(s1.name)
+
+
+class Account:
+    def __init__(self, accNo, accPass):
+        self.accNo = accNo
+        self.__accPass = accPass  # By putting 2 underscores at starting of variable, we can make it private and unaccessible outside of the CLASS.
+
+    def resetPass(self):
+        print(self.__accPass)
+
+
+user1 = Account("9354", "9901")
+# print(user1.accNo)
+# print(user1.resetPass())
+
+
+class Person(Account):
+    def __init__(self, name):
+        self.name = name
+
+    # __name = 'ken'
+
+
+user = Person("ken")
+print(user.name)
+
+
+# Types of Inheritance
+# Single Inheritance
+# Multi-level Inheritance
+# Multiple Inheritance
+
+
+class Car:
+    @staticmethod
+    def start():
+        print("car started .. ")
+
+    @staticmethod
+    def stop():
+        print("car stopped.")
+
+
+class ToyotaCar(Car):
+    def __init__(self, brand):
+        self.brand = brand
+
+
+class Fortuner(ToyotaCar):
+    def __init__(self, brand, type):  # also fix this one
+        super().__init__(brand)  # call parent constructor
+        self.type = type
+
+
+car1 = Fortuner("Toyota", "Diesel")
+car1.start()
